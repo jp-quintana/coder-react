@@ -1,4 +1,5 @@
-import CartWidget from './CartWidget';
+import { useState, useEffect } from 'react'
+import CartWidget from '../CartWidget/CartWidget';
 
 const Nav = () => {
   return (

@@ -1,5 +1,4 @@
-import Nav from './Nav'
-// import logo from '/img/logo1 b.png'
+import Nav from '../Nav/Nav'
 
 const Header = () => {
   return (
