@@ -2,10 +2,10 @@ import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ product }) => {
 
-  const handleOnAdd = () =>{
+  const handleOnAdd = () => {
 
   }
-  
+
   return (
     <div class="productos__item">
       <div class="productos__enlace">
