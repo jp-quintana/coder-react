@@ -77,7 +77,6 @@ const getItem = (product, setProduct) => {
   const promesa = new Promise((res, rej) => {
 
     setTimeout(() => {
-      console.log("Aca se pide el array");
 
       res(productsList[2])
 

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 
 import ItemList from '../ItemList/ItemList'
 
 const productsList = [
   {
     sku: "1001",
+    categoria: "remeras",
     tipo: "Remera",
     modelo: "De Gira",
     color: "Blanca",
@@ -17,6 +19,7 @@ const productsList = [
   },
   {
     sku: "1002",
+    categoria: "remeras",
     tipo: "Remera",
     modelo: "Ojos",
     color: "Negra",
@@ -28,6 +31,7 @@ const productsList = [
   },
   {
     sku: "2001",
+    categoria: "buzos",
     tipo: "Hoodie",
     modelo: "De Gira",
     color: "Blanco",
@@ -39,6 +43,7 @@ const productsList = [
   },
   {
     sku: "2002",
+    categoria: "buzos",
     tipo: "Hoodie",
     modelo: "De Gira",
     color: "Negro",
@@ -50,6 +55,7 @@ const productsList = [
   },
   {
     sku: "2003",
+    categoria: "buzos",
     tipo: "Buzo",
     modelo: "Flaakko",
     color: "Negro",
@@ -61,6 +67,7 @@ const productsList = [
   },
   {
     sku: "3001",
+    categoria: "accesorios",
     tipo: "Gorra",
     modelo: "Baires",
     color: "Blanca",
@@ -75,31 +82,55 @@ const productsList = [
 const ItemListContainer = () => {
 
   const [products, setProducts] = useState([])
+  const {id} = useParams()
+  console.log(id)
 
   useEffect(() => {
 
-    const promesa = new Promise((res, rej) => {
+    if (id === "coleccion") {
+      const promesa = new Promise((res, rej) => {
 
-      setTimeout(() => {
-        console.log("Aca se pide el array");
+        setTimeout(() => {
 
-        res(productsList)
+          res(productsList)
 
-        rej()
+          rej()
 
-      }, 2000)
+        }, 2000)
 
-    })
+      })
 
-    promesa
-        .then((res) => {
-          setProducts(res)
-        })
-        .catch(() => {
-          throw new Error('Error')
-        })
+      promesa
+          .then((res) => {
+            setProducts(res)
+          })
+          .catch(() => {
+            throw new Error('Error')
+          })
+    } else {
+      const promesa = new Promise((res, rej) => {
 
-  }, [])
+        setTimeout(() => {
+
+          res(productsList.filter(producto => producto["categoria"] === id))
+
+          rej()
+
+        }, 2000)
+
+      })
+
+      promesa
+          .then((res) => {
+            setProducts(res)
+            console.log(products)
+          })
+          .catch(() => {
+            throw new Error('Error')
+          })
+    }
+
+  }, [id])
 
   return (
     <main class="main">

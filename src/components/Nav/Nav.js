@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import {NavLink} from 'react-router-dom'
+
 import CartWidget from '../CartWidget/CartWidget';
 
 const Nav = () => {
@@ -24,9 +26,9 @@ const Nav = () => {
         <CartWidget/>
       </nav>
       <nav class="navegacion2">
-          <a class="navegacion2__enlace" href="pages/remeras.html">Remeras</a>
-          <a class="navegacion2__enlace" href="pages/buzos.html">Buzos</a>
-          <a class="navegacion2__enlace" href="pages/accesorios.html">Accesorios</a>
+          <NavLink class="navegacion2__enlace" to="categoria/remeras">Remeras</NavLink>
+          <NavLink class="navegacion2__enlace" to="categoria/buzos">Buzos</NavLink>
+          <NavLink class="navegacion2__enlace" to="categoria/accesorios">Accesorios</NavLink>
       </nav>
     </>
   )
