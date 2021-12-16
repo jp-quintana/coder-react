@@ -82,11 +82,11 @@ const ItemListContainer = () => {
 
       setTimeout(() => {
         console.log("Aca se pide el array");
-        if (Math.random() > 0.5) {
-          res(productsList)
-        } else {
-          rej()
-        }
+
+        res(productsList)
+
+        rej()
+
       }, 2000)
 
     })
