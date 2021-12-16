@@ -83,11 +83,11 @@ const ItemListContainer = () => {
 
   const [products, setProducts] = useState([])
   const {id} = useParams()
-  console.log(id)
+
 
   useEffect(() => {
 
-    if (id === "coleccion") {
+    if (id === "coleccion" || !id) {
       const promesa = new Promise((res, rej) => {
 
         setTimeout(() => {
@@ -123,7 +123,6 @@ const ItemListContainer = () => {
       promesa
           .then((res) => {
             setProducts(res)
-            console.log(products)
           })
           .catch(() => {
             throw new Error('Error')

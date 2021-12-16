@@ -7,7 +7,7 @@ const Header = () => {
     <header class="header">
       <div class="header-grid">
         <div class="logo">
-          <NavLink class="logo__link" to="/categoria/coleccion">
+          <NavLink class="logo__link" to="/">
             <img class="logo__nombre" src='/img/logo1 b.png' alt="logo flaakko" />
           </NavLink>
         </div>

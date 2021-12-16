@@ -1,3 +1,5 @@
+import {NavLink} from 'react-router-dom'
+
 import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ product }) => {
@@ -8,7 +10,7 @@ const Item = ({ product }) => {
 
   return (
     <div class="productos__item">
-      <div class="productos__enlace">
+      <NavLink exact to={`/producto/${product.sku}`}class="productos__enlace">
         <div class="productos__imagen-contenedor">
           <img src={product.img1} alt="" class="productos__imagen"></img>
           <img src={product.img2} alt="" class="productos__imagen-bottom"></img>
@@ -18,7 +20,7 @@ const Item = ({ product }) => {
           <li class="productos__precio">${product.precio}</li>
         </ul>
         <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>
-      </div>
+      </NavLink>
     </div>
   )
 }

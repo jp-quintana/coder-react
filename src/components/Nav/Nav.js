@@ -26,9 +26,9 @@ const Nav = () => {
         <CartWidget/>
       </nav>
       <nav class="navegacion2">
-          <NavLink class="navegacion2__enlace" to="categoria/remeras">Remeras</NavLink>
-          <NavLink class="navegacion2__enlace" to="categoria/buzos">Buzos</NavLink>
-          <NavLink class="navegacion2__enlace" to="categoria/accesorios">Accesorios</NavLink>
+          <NavLink class="navegacion2__enlace" to="/categoria/remeras">Remeras</NavLink>
+          <NavLink class="navegacion2__enlace" to="/categoria/buzos">Buzos</NavLink>
+          <NavLink class="navegacion2__enlace" to="/categoria/accesorios">Accesorios</NavLink>
       </nav>
     </>
   )
