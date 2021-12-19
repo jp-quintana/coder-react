@@ -1,4 +1,16 @@
+import { useState } from 'react';
+import {NavLink} from 'react-router-dom'
+
+import ItemCount from '../ItemCount/ItemCount'
+
 const Item = ({ product }) => {
+
+  const [total, setTotal] = useState([])
+
+  const handleOnAdd = (unidad) => {
+    setTotal([...total, unidad])
+    product.stock -= unidad
+  }
 
   return (
     <div class="producto">
@@ -11,6 +23,7 @@ const Item = ({ product }) => {
             <img class="producto__miniatura" src="../img/producto-blanco-1-miniatura.jpg" alt=""></img>
             <img class="producto__miniatura" src="../img/producto-negro-1-miniatura.jpg" alt=""></img>
           </div>
+
           <form id="form-producto" class="" action="">
             <select id="talle-producto" class="producto__talle" name="" required>
               <option value="" disabled selected>Elegi tu talle</option>
@@ -20,8 +33,9 @@ const Item = ({ product }) => {
               <option value="L">L</option>
               <option value="XL">XL</option>
             </select>
-            <button class="producto__boton" type="submit" name="button">Agregar a carrito</button>
           </form>
+          <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>
+          <NavLink to="/cart"><button class="producto__boton" type="submit" name="button">Terminar compra</button></NavLink>
         </div>
       </div>
 

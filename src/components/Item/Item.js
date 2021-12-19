@@ -10,7 +10,7 @@ const Item = ({ product }) => {
 
   return (
     <div class="productos__item">
-      <NavLink exact to={`/producto/${product.sku}`}class="productos__enlace">
+      <NavLink to={`/producto/${product.sku}`}class="productos__enlace">
         <div class="productos__imagen-contenedor">
           <img src={product.img1} alt="" class="productos__imagen"></img>
           <img src={product.img2} alt="" class="productos__imagen-bottom"></img>

@@ -1,24 +1,24 @@
 import { useState } from 'react';
 
-const ItemCount = ({ stock, onAdd, initial }) => {
+const ItemCount = ({ stock, onAdd, initial}) => {
 
-  const [counter, setCount] = useState(1);
+  const [unidad, setUnidad] = useState(1);
 
   const handleMinus = () => {
-    if (counter > initial) {
-      setCount(counter - 1);
+    if (unidad > initial) {
+      setUnidad(unidad - 1);
     }
   }
 
   const handleAdd = () => {
-    if (counter < stock) {
-      setCount(counter + 1);
+    if (unidad < stock) {
+      setUnidad(unidad + 1);
     }
   }
 
   return (
     <div>
-      <p>{counter}</p>
+      <p>{unidad}</p>
       <div>
         <button onClick={handleMinus}>
         -
@@ -26,7 +26,7 @@ const ItemCount = ({ stock, onAdd, initial }) => {
         <button onClick={handleAdd}>
         +
         </button>
-        <button onClick={() => onAdd()} type='button'>
+        <button onClick={() => onAdd(unidad)} type='button'>
         Agregar a carrito
         </button>
       </div>
