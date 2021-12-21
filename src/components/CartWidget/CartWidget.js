@@ -1,4 +1,11 @@
+import { useContext } from 'react'
+import { context } from '../../context/CartContext'
+
 const CartWidget = () => {
+
+  const resultado = useContext(context);
+  console.log(resultado)
+
   return (
     <a class="navegacion__enlace" href="pages/carrito.html">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
