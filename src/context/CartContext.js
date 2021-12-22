@@ -10,19 +10,33 @@ const CartContext = ({children}) => {
   const [cantidad, setCantidad] = useState(0)
 
   const addItem = (producto, cantidad) => {
-    setCarrito([...producto])
+
+    let indice = isInCart(producto.sku)
+    console.log(indice)
+
+    if (indice === -1) {
+      setCarrito([...carrito, { producto, cantidad }])
+    } else {
+      let updateCart = [...carrito]
+      updateCart[indice].cantidad += cantidad
+      setCarrito(updateCart)
+    }
   }
 
   const removeItem = (sku) => {
-
+    const producto = isInCart(sku);
+    const indice = carrito.indexOf(producto);
+    carrito.splice(indice, 1);
   }
 
   const clear = () => {
     setCarrito([])
   }
 
-  const isInCart = () => {
-    
+  const isInCart = sku => {
+    let item = carrito.find(item => item.producto.sku === sku)
+    console.log(item)
+    return carrito.indexOf(item)
   }
 
   const valorContexto = {

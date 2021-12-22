@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {NavLink} from 'react-router-dom'
 
 import { context } from '../../context/CartContext'
@@ -7,10 +7,10 @@ import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ product }) => {
 
-  const [total, setTotal] = useState([])
+  const carrito = useContext(context);
 
   const handleOnAdd = (unidad) => {
-    setTotal([...total, { product, unidad }])
+    carrito.addItem(product, unidad)
   }
 
   return (
