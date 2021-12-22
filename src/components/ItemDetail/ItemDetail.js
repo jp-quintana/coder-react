@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import {NavLink} from 'react-router-dom'
 
+import { context } from '../../context/CartContext'
+
 import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ product }) => {
@@ -8,8 +10,7 @@ const Item = ({ product }) => {
   const [total, setTotal] = useState([])
 
   const handleOnAdd = (unidad) => {
-    setTotal([...total, unidad])
-    product.stock -= unidad
+    setTotal([...total, { product, unidad }])
   }
 
   return (

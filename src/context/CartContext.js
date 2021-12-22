@@ -6,8 +6,32 @@ const { Provider } = context
 
 const CartContext = ({children}) => {
 
-  const [valor, setValor] = useState({nombre: 'jp'})
-  const valorContexto = {valor, setValor}
+  const [carrito, setCarrito] = useState([])
+  const [cantidad, setCantidad] = useState(0)
+
+  const addItem = (producto, cantidad) => {
+    setCarrito([...producto])
+  }
+
+  const removeItem = (sku) => {
+
+  }
+
+  const clear = () => {
+    setCarrito([])
+  }
+
+  const isInCart = () => {
+    
+  }
+
+  const valorContexto = {
+    carrito,
+    cantidad,
+    addItem,
+    removeItem,
+    clear
+  }
 
   return (
     <Provider value={valorContexto}>

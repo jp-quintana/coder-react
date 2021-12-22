@@ -19,8 +19,8 @@ const Item = ({ product }) => {
           <li class="productos__nombre">{product.tipo} <span>{product.modelo}</span> {product.color}</li>
           <li class="productos__precio">${product.precio}</li>
         </ul>
-        <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>
       </NavLink>
+      <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>      
     </div>
   )
 }
