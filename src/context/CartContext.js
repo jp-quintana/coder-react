@@ -35,7 +35,6 @@ const CartContext = ({children}) => {
 
   const isInCart = sku => {
     let item = carrito.find(item => item.producto.sku === sku)
-    console.log(item)
     return carrito.indexOf(item)
   }
 
