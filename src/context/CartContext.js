@@ -7,19 +7,20 @@ const { Provider } = context
 const CartContext = ({children}) => {
 
   const [carrito, setCarrito] = useState([])
-  const [cantidad, setCantidad] = useState(0)
+  const [cantidadCarrito, setCantidadCarrito] = useState(0)
 
   const addItem = (producto, cantidad) => {
 
     let indice = isInCart(producto.sku)
-    console.log(indice)
 
     if (indice === -1) {
       setCarrito([...carrito, { producto, cantidad }])
+      setCantidadCarrito(cantidadCarrito + cantidad)
     } else {
       let updateCart = [...carrito]
       updateCart[indice].cantidad += cantidad
       setCarrito(updateCart)
+      setCantidadCarrito(cantidadCarrito + cantidad)
     }
   }
 
@@ -40,7 +41,7 @@ const CartContext = ({children}) => {
 
   const valorContexto = {
     carrito,
-    cantidad,
+    cantidadCarrito,
     addItem,
     removeItem,
     clear
