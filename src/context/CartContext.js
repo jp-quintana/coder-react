@@ -24,10 +24,12 @@ const CartContext = ({children}) => {
     }
   }
 
-  const removeItem = (sku) => {
-    const producto = isInCart(sku);
-    const indice = carrito.indexOf(producto);
-    carrito.splice(indice, 1);
+  const removeItem = item => {
+    setCantidadCarrito(cantidadCarrito - item.cantidad)
+    const indice = isInCart(item.producto.sku);
+    let updateCart = [...carrito]
+    updateCart.splice(indice, 1);
+    setCarrito(updateCart)
   }
 
   const clear = () => {

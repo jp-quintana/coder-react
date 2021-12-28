@@ -7,10 +7,10 @@ import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ product }) => {
 
-  const carrito = useContext(context);
+  const contexto = useContext(context);
 
   const handleOnAdd = (unidad) => {
-    carrito.addItem(product, unidad)
+    contexto.addItem(product, unidad)
   }
 
   return (

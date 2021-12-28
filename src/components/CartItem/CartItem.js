@@ -1,5 +1,15 @@
+import { useContext, useState } from 'react';
+
+import { context } from '../../context/CartContext'
+
 const CartItem = ({ item }) => {
-  console.log(item)
+
+  const contexto = useContext(context);
+
+  const handleOnRemove = item => {
+    contexto.removeItem(item)
+  }
+
   return (
     <tr class="carrito__fila">
       <td class="carrito__producto">
@@ -9,16 +19,16 @@ const CartItem = ({ item }) => {
           <div class="carrito__desplegado">
             <p>Color: {item.producto.color}</p>
           </div>
-          <p data-id="" class="carrito__eliminar">remover</p>
+          <p onClick={() => handleOnRemove(item)} class="carrito__eliminar">remover</p>
         </div>
       </td>
       <td class="carrito__cantidad">
         <div class="carrito__cantidad-elementos">
-          <p data-id="" class="carrito__agregar">
+          <p class="carrito__agregar">
             ^
           </p>
           <p>{item.cantidad}</p>
-          <p data-id="" class="carrito__reducir">
+          <p class="carrito__reducir">
             ^
           </p>
         </div>
