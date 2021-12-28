@@ -7,33 +7,44 @@ const { Provider } = context
 const CartContext = ({children}) => {
 
   const [carrito, setCarrito] = useState([])
-  const [cantidadCarrito, setCantidadCarrito] = useState(0)
+  const [carritoCantidad, setCarritoCantidad] = useState(0)
+  const [carritoPrecio, setCarritoPrecio] = useState(0)
 
   const addItem = (producto, cantidad) => {
 
     let indice = isInCart(producto.sku)
 
+
     if (indice === -1) {
       setCarrito([...carrito, { producto, cantidad }])
-      setCantidadCarrito(cantidadCarrito + cantidad)
     } else {
       let updateCart = [...carrito]
       updateCart[indice].cantidad += cantidad
       setCarrito(updateCart)
-      setCantidadCarrito(cantidadCarrito + cantidad)
     }
+    setCarritoCantidad(carritoCantidad + cantidad)
+    setCarritoPrecio(carritoPrecio + producto.precio * cantidad)
   }
 
   const removeItem = item => {
-    setCantidadCarrito(cantidadCarrito - item.cantidad)
     const indice = isInCart(item.producto.sku);
     let updateCart = [...carrito]
     updateCart.splice(indice, 1);
     setCarrito(updateCart)
+    setCarritoCantidad(carritoCantidad - item.cantidad)
+    setCarritoPrecio(carritoPrecio - item.producto.precio * item.cantidad)
   }
 
   const clear = () => {
     setCarrito([])
+  }
+
+  const setPrecio = () => {
+    let total = 0
+    carrito.map(item => {
+      total += item.producto.precio * item.cantidad
+    })
+    setCarritoPrecio(total)
   }
 
   const isInCart = sku => {
@@ -43,11 +54,14 @@ const CartContext = ({children}) => {
 
   const valorContexto = {
     carrito,
-    cantidadCarrito,
+    carritoCantidad,
+    carritoPrecio,
     addItem,
     removeItem,
     clear
   }
+
+  console.log(carritoPrecio)
 
   return (
     <Provider value={valorContexto}>

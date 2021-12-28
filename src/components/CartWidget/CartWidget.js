@@ -6,7 +6,7 @@ import { context } from '../../context/CartContext'
 const CartWidget = () => {
 
   const contexto = useContext(context);
-  const cantidadCarrito = contexto.cantidadCarrito
+  const cantidadCarrito = contexto.carritoCantidad
 
   return (
       <div class ="navegacion__icono-carrito">
@@ -24,7 +24,7 @@ const CartWidget = () => {
           ?
 
           null
-          
+
           :
 
           <div class="navegacion__items-carrito">{cantidadCarrito}</div>

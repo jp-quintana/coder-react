@@ -8,6 +8,8 @@ const Cart = () => {
 
   const contexto = useContext(context);
   const carrito = contexto.carrito
+  const carritoPrecio = contexto.carritoPrecio
+
   return (
     <main class="main">
       <div class="contenedor">
@@ -35,7 +37,7 @@ const Cart = () => {
               </tbody>
             </table>
 
-            <p id="precio-total-carrito" class="carrito__total">Total: $0</p>
+            <p id="precio-total-carrito" class="carrito__total">Total: ${carritoPrecio}</p>
 
             <div class="carrito__boton-container">
               <button id="boton-carrito" type="button" class="carrito__boton">Confirmá compra</button>
