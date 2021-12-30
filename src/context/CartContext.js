@@ -39,14 +39,6 @@ const CartContext = ({children}) => {
     setCarrito([])
   }
 
-  const setPrecio = () => {
-    let total = 0
-    carrito.map(item => {
-      total += item.producto.precio * item.cantidad
-    })
-    setCarritoPrecio(total)
-  }
-
   const isInCart = sku => {
     let item = carrito.find(item => item.producto.sku === sku)
     return carrito.indexOf(item)
@@ -60,8 +52,6 @@ const CartContext = ({children}) => {
     removeItem,
     clear
   }
-
-  console.log(carritoPrecio)
 
   return (
     <Provider value={valorContexto}>
