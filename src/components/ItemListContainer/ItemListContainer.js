@@ -28,7 +28,7 @@ const ItemListContainer = () => {
         resultado.forEach(doc => {
           productosFormateados.push(doc.data())
         })
-        
+
         setProducts(productosFormateados)
       })
       .catch(() => {
@@ -37,7 +37,6 @@ const ItemListContainer = () => {
 
     } else {
 
-      //Le meti un index a la coleccion en el firestore para que funcione este query
       const productos = query(collection(db, "productos"), where("categoria", "==", id), orderBy("sku", "asc"))
       const promesa = getDocs(productos)
 

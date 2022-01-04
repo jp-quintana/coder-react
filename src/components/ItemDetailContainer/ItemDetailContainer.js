@@ -1,4 +1,4 @@
-import { collection, getDocs, query, where, doc } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
@@ -18,7 +18,6 @@ const ItemDetailContainer = () => {
 
     promesa
     .then(resultado => {
-      //Rever documentacion para encontrar mejor forma de hacer esto
       const productoFormateado = []
       resultado.forEach(doc => productoFormateado.push(doc.data()))
       setProduct(productoFormateado[0])
