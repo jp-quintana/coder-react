@@ -37,6 +37,7 @@ const CartContext = ({children}) => {
 
   const clear = () => {
     setCarrito([])
+    setCarritoCantidad(0);
   }
 
   const isInCart = sku => {

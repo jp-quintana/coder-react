@@ -27,9 +27,7 @@ const ItemDetailContainer = () => {
     })
 
   }, [id])
-
-  console.log(id)
-
+  
   return (
     <main class="main">
       <div class="contenedor">
