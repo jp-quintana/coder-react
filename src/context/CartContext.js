@@ -26,6 +26,23 @@ const CartContext = ({children}) => {
     setCarritoPrecio(carritoPrecio + producto.precio * cantidad)
   }
 
+  const substractItem = (item, cantidad) => {
+
+    let producto = item.producto
+
+    let indice = isInCart(producto.sku)
+
+    if (carrito[indice].cantidad === 1) {
+      removeItem(item)
+    } else {
+      let updateCart = [...carrito]
+      updateCart[indice].cantidad -= cantidad
+      setCarrito(updateCart)
+      setCarritoCantidad(carritoCantidad - cantidad)
+      setCarritoPrecio(carritoPrecio - producto.precio * cantidad)
+    }
+  }
+
   const removeItem = item => {
     const indice = isInCart(item.producto.sku);
     let updateCart = [...carrito]
@@ -38,6 +55,7 @@ const CartContext = ({children}) => {
   const clear = () => {
     setCarrito([])
     setCarritoCantidad(0);
+    setCarritoPrecio(0);
   }
 
   const isInCart = sku => {
@@ -50,6 +68,7 @@ const CartContext = ({children}) => {
     carritoCantidad,
     carritoPrecio,
     addItem,
+    substractItem,
     removeItem,
     clear
   }

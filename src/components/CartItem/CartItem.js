@@ -2,12 +2,22 @@ import { useContext } from 'react';
 
 import { context } from '../../context/CartContext'
 
-const CartItem = ({ item }) => {
+import CartItemCount from '../CartItemCount/CartItemCount'
 
+const CartItem = ({ item }) => {
   const contexto = useContext(context);
 
   const handleOnRemove = item => {
     contexto.removeItem(item)
+  }
+
+  const handleOnAdd = unidad => {
+    let product = item.producto
+    contexto.addItem(product, unidad)
+  }
+
+  const handleOnSubstract = unidad => {
+    contexto.substractItem(item, unidad)
   }
 
   return (
@@ -23,17 +33,9 @@ const CartItem = ({ item }) => {
         </div>
       </td>
       <td className="carrito__cantidad">
-        <div className="carrito__cantidad-elementos">
-          <p className="carrito__agregar">
-            ^
-          </p>
-          <p>{item.cantidad}</p>
-          <p className="carrito__reducir">
-            ^
-          </p>
-        </div>
+        <CartItemCount onAdd={handleOnAdd} onSubstract={handleOnSubstract} item={item}/>
       </td>
-      <td className="carrito__subtotal">0</td>
+      <td className="carrito__subtotal">${item.producto.precio * item.cantidad}</td>
     </tr>
   )
 }

@@ -1,11 +1,16 @@
+import { useContext } from 'react';
 import {NavLink} from 'react-router-dom'
+
+import { context } from '../../context/CartContext'
 
 import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ product }) => {
 
-  const handleOnAdd = () => {
+  const contexto = useContext(context);
 
+  const handleOnAdd = (unidad) => {
+    contexto.addItem(product, unidad)
   }
 
   return (
