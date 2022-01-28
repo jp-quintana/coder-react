@@ -20,21 +20,7 @@ const Item = ({ product }) => {
           <h1 className="producto__nombre no-margin">{product.modelo}</h1>
           <p className="producto__detalle no-margin">{product.tipo} {product.color}</p>
           <p className="producto__precio no-margin">${product.precio}</p>
-          <div className="producto__color">
-            <img className="producto__miniatura" src="../img/producto-blanco-1-miniatura.jpg" alt=""></img>
-            <img className="producto__miniatura" src="../img/producto-negro-1-miniatura.jpg" alt=""></img>
-          </div>
-
-          <form id="form-producto" className="" action="">
-            <select id="talle-producto" className="producto__talle" name="" required>
-              <option value="" disabled selected>Elegi tu talle</option>
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-            </select>
-          </form>
+          
           <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>
           <NavLink to="/cart"><button className="producto__boton" type="submit" name="button">Terminar compra</button></NavLink>
         </div>
