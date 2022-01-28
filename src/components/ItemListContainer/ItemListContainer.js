@@ -58,8 +58,8 @@ const ItemListContainer = () => {
   }, [id])
 
   return (
-    <main class="main">
-      <div class="contenedor">
+    <main className="main">
+      <div className="contenedor">
         <ItemList products={products} />
       </div>
     </main>

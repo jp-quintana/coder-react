@@ -9,18 +9,18 @@ const Item = ({ product }) => {
   }
 
   return (
-    <div class="productos__item">
-      <NavLink to={`/producto/${product.sku}`}class="productos__enlace">
-        <div class="productos__imagen-contenedor">
-          <img src={product.img1} alt="" class="productos__imagen"></img>
-          <img src={product.img2} alt="" class="productos__imagen-bottom"></img>
+    <div className="productos__item">
+      <NavLink to={`/producto/${product.sku}`}className="productos__enlace">
+        <div className="productos__imagen-contenedor">
+          <img src={product.img1} alt="" className="productos__imagen"></img>
+          <img src={product.img2} alt="" className="productos__imagen-bottom"></img>
         </div>
-        <ul class="productos__info">
-          <li class="productos__nombre">{product.tipo} <span>{product.modelo}</span> {product.color}</li>
-          <li class="productos__precio">${product.precio}</li>
+        <ul className="productos__info">
+          <li className="productos__nombre">{product.tipo} <span>{product.modelo}</span> {product.color}</li>
+          <li className="productos__precio">${product.precio}</li>
         </ul>
       </NavLink>
-      <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>      
+      <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>
     </div>
   )
 }

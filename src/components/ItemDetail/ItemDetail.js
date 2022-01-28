@@ -14,19 +14,19 @@ const Item = ({ product }) => {
   }
 
   return (
-    <div class="producto">
-      <div class="producto__sticky">
-        <div class="producto__info">
-          <h1 class="producto__nombre no-margin">{product.modelo}</h1>
-          <p class="producto__detalle no-margin">{product.tipo} {product.color}</p>
-          <p class="producto__precio no-margin">${product.precio}</p>
-          <div class="producto__color">
-            <img class="producto__miniatura" src="../img/producto-blanco-1-miniatura.jpg" alt=""></img>
-            <img class="producto__miniatura" src="../img/producto-negro-1-miniatura.jpg" alt=""></img>
+    <div className="producto">
+      <div className="producto__sticky">
+        <div className="producto__info">
+          <h1 className="producto__nombre no-margin">{product.modelo}</h1>
+          <p className="producto__detalle no-margin">{product.tipo} {product.color}</p>
+          <p className="producto__precio no-margin">${product.precio}</p>
+          <div className="producto__color">
+            <img className="producto__miniatura" src="../img/producto-blanco-1-miniatura.jpg" alt=""></img>
+            <img className="producto__miniatura" src="../img/producto-negro-1-miniatura.jpg" alt=""></img>
           </div>
 
-          <form id="form-producto" class="" action="">
-            <select id="talle-producto" class="producto__talle" name="" required>
+          <form id="form-producto" className="" action="">
+            <select id="talle-producto" className="producto__talle" name="" required>
               <option value="" disabled selected>Elegi tu talle</option>
               <option value="XS">XS</option>
               <option value="S">S</option>
@@ -36,15 +36,15 @@ const Item = ({ product }) => {
             </select>
           </form>
           <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>
-          <NavLink to="/cart"><button class="producto__boton" type="submit" name="button">Terminar compra</button></NavLink>
+          <NavLink to="/cart"><button className="producto__boton" type="submit" name="button">Terminar compra</button></NavLink>
         </div>
       </div>
 
-      <div class="producto__sticky-responsive">
-        <div class="producto__info-responsive">
-          <p class="producto__nombre-responsive no-margin">{product.tipo} <span>{product.modelo}</span> {product.color}</p>
-          <p class="producto__precio-responsive no-margin">${product.precio}</p>
-          <select class="producto__talle-responsive" name="">
+      <div className="producto__sticky-responsive">
+        <div className="producto__info-responsive">
+          <p className="producto__nombre-responsive no-margin">{product.tipo} <span>{product.modelo}</span> {product.color}</p>
+          <p className="producto__precio-responsive no-margin">${product.precio}</p>
+          <select className="producto__talle-responsive" name="">
             <option value="xs" disabled selected>Elegi tu talle</option>
             <option value="xs">XS</option>
             <option value="s">S</option>
@@ -52,11 +52,11 @@ const Item = ({ product }) => {
             <option value="l">L</option>
             <option value="xl">XL</option>
           </select>
-          <button class="producto__boton-responsive" type="submit" name="button">Agregar a carrito</button>
+          <button className="producto__boton-responsive" type="submit" name="button">Agregar a carrito</button>
         </div>
       </div>
 
-      <div class="producto__img">
+      <div className="producto__img">
         <img src={product.img1} alt=""></img>
         <img src={product.img2} alt=""></img>
       </div>

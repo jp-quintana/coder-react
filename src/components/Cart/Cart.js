@@ -57,9 +57,9 @@ const Cart = () => {
 
 
   return (
-    <main class="main">
-      <div class="contenedor">
-        <section class="carrito">
+    <main className="main">
+      <div className="contenedor">
+        <section className="carrito">
           <h1>Carrito</h1>
           {
             carrito.length === 0
@@ -69,28 +69,28 @@ const Cart = () => {
             <>
             <p>El carrito está vacio</p>
 
-            <div class="carrito__boton-container">
-              <NavLink to="/"><button id="boton-carrito" type="button" class="carrito__boton">Volver a productos</button></NavLink>
+            <div className="carrito__boton-container">
+              <NavLink to="/"><button id="boton-carrito" type="button" className="carrito__boton">Volver a productos</button></NavLink>
             </div>
             </>
 
             :
 
             <>
-            <table class="carrito__tabla">
-              <tbody id="body-carrito" class="carrito__body">
+            <table className="carrito__tabla">
+              <tbody id="body-carrito" className="carrito__body">
                 {carrito.map(item => <CartItem key={item['producto']['sku']} item={item}/>)}
               </tbody>
             </table>
 
-            <p id="precio-total-carrito" class="carrito__total">Total: ${carritoPrecio}</p>
+            <p id="precio-total-carrito" className="carrito__total">Total: ${carritoPrecio}</p>
 
             <input type="text" onChange={handleChangeNombre} placeholder="nombre" />
             <input type="email" onChange={handleChangeEmail} placeholder="email@email.com" />
             <input type="number" onChange={handleChangeTelefono} placeholder="11111111" />
 
-            <div class="carrito__boton-container">
-              <button onClick={guardarCompra} id="boton-carrito" type="button" class="carrito__boton">Confirmá compra</button>
+            <div className="carrito__boton-container">
+              <button onClick={guardarCompra} id="boton-carrito" type="button" className="carrito__boton">Confirmá compra</button>
             </div>
             {loading && <p>Cargando...</p>}
             {id && <p>Se guardo la compra con id {id}</p>}
