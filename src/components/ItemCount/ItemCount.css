@@ -1,0 +1,23 @@
+.item-count {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 3fr;
+}
+
+.item-count__botones {
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: "Monument Extended", sans-serif;
+}
+
+.item-count__botones:last-child {
+  border-left: white 2px solid;
+}
+
+.item-count__botones:hover {
+  cursor: pointer;
+}
+
+.item-count__numero {
+  text-align: center;
+}

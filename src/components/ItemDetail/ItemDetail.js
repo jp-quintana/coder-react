@@ -21,7 +21,7 @@ const Item = ({ product }) => {
         <div className="producto__info">
           <h1 className="producto__nombre no-margin">{product.modelo}</h1>
           <p className="producto__detalle no-margin">{product.tipo} {product.color}</p>
-          <p className="producto__precio no-margin">${product.precio}</p>
+          <p className="producto__precio">${product.precio}</p>
 
           <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>
           <NavLink to="/cart"><button className="producto__boton" type="submit" name="button">Terminar compra</button></NavLink>

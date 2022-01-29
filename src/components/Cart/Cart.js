@@ -93,24 +93,26 @@ const Cart = () => {
             </table>
 
             <p id="precio-total-carrito" className="carrito__total">Total: ${carritoPrecio}</p>
-            <div className="">
+
+            <div className="carrito-form">
               <div className="">
-                <label>Nombre</label>
+                <label className="carrito-form__labels">Nombre</label>
                 <input type="text" onChange={handleChangeNombre} placeholder="nombre" />
               </div>
               <div className="">
-                <label>Apellido</label>
+                <label className="carrito-form__labels">Apellido</label>
                 <input type="text" onChange={handleChangeApellido} placeholder="apellido" />
               </div>
               <div className="">
-                <label>Email</label>
+                <label className="carrito-form__labels">Email</label>
                 <input type="email" onChange={handleChangeEmail} placeholder="email@email.com" />
               </div>
               <div className="">
-                <label>Telefono</label>
+                <label className="carrito-form__labels">Telefono</label>
                 <input type="number" onChange={handleChangeTelefono} placeholder="11111111" />
               </div>
             </div>
+
             <div className="carrito__boton-container">
               <button onClick={guardarCompra} id="boton-carrito" type="button" className="carrito__boton">Confirmá compra</button>
             </div>
