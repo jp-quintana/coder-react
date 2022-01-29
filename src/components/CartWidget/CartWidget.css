@@ -1,0 +1,14 @@
+.navegacion__icono-carrito {
+  position: relative;
+}
+
+.navegacion__items-carrito {
+  font-size: 1rem;
+  position: absolute;
+  top: -.8rem;
+  right: -.5rem;
+  padding: 0 .5rem;
+  color: #ffffff;
+  text-align: center;
+  background-color: #8c52ff;
+}

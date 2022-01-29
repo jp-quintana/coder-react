@@ -1,0 +1,29 @@
+.navegacion {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  padding-right: 3rem;
+}
+
+.navegacion__sign-in-modal, .navegacion__sign-in-modal-close {
+  border: none;
+  background-color: transparent;
+}
+
+.navegacion2 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navegacion2 {
+    display: flex;
+    gap: 12rem;
+    grid-column: 1 / 3;
+    justify-content: center;
+  }
+}
+
+.navegacion2__enlace {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}

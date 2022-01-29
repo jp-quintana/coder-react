@@ -2,6 +2,8 @@ import { useContext } from 'react';
 
 import { context } from '../../context/CartContext'
 
+import './CartItem.css'
+
 import CartItemCount from '../CartItemCount/CartItemCount'
 
 const CartItem = ({ item }) => {

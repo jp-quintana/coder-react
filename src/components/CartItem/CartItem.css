@@ -1,0 +1,79 @@
+.carrito__header,
+.carrito__fila {
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+}
+
+.carrito__header th,
+.carrito__fila th {
+  font-size: 1.6rem;
+}
+
+.carrito__header th:last-child,
+.carrito__fila th:last-child {
+  text-align: right;
+}
+
+.carrito__fila {
+  border-bottom: 0.1rem solid rgba(225, 225, 225, 0.3);
+  padding: 1rem 0rem;
+}
+
+.carrito__producto,
+.carrito__cantidad,
+.carrito__subtotal {
+  display: flex;
+  align-items: center;
+}
+
+.carrito__producto {
+  grid-gap: 2rem;
+}
+
+.carrito__imagen {
+  height: 20rem;
+}
+
+.carrito__nombre {
+  font-size: 1.6rem;
+}
+
+.carrito__desplegado {
+  display: none;
+}
+
+.carrito__desplegar:hover {
+  cursor: pointer;
+}
+
+.carrito__ocultar {
+  display: none;
+}
+
+.carrito__eliminar {
+  font-size: 1rem;
+  color: gray;
+}
+
+.carrito__eliminar:hover {
+  cursor: pointer;
+}
+
+.carrito__cantidad-elementos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carrito__reducir {
+  transform: rotate(180deg);
+}
+
+.carrito__agregar:hover,
+.carrito__reducir:hover {
+  cursor: pointer;
+}
+
+.carrito__subtotal {
+  flex-direction: row-reverse;
+}

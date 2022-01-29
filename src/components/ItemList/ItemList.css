@@ -1,0 +1,13 @@
+.productos {
+  width: 100%;
+  display: grid;
+  gap: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -5,6 +5,8 @@ import { context } from '../../context/CartContext'
 
 import ItemCount from '../ItemCount/ItemCount'
 
+import './ItemDetail.css'
+
 const Item = ({ product }) => {
 
   const contexto = useContext(context);
@@ -20,25 +22,9 @@ const Item = ({ product }) => {
           <h1 className="producto__nombre no-margin">{product.modelo}</h1>
           <p className="producto__detalle no-margin">{product.tipo} {product.color}</p>
           <p className="producto__precio no-margin">${product.precio}</p>
-          
+
           <ItemCount stock={product.stock} onAdd={handleOnAdd} initial={1}/>
           <NavLink to="/cart"><button className="producto__boton" type="submit" name="button">Terminar compra</button></NavLink>
-        </div>
-      </div>
-
-      <div className="producto__sticky-responsive">
-        <div className="producto__info-responsive">
-          <p className="producto__nombre-responsive no-margin">{product.tipo} <span>{product.modelo}</span> {product.color}</p>
-          <p className="producto__precio-responsive no-margin">${product.precio}</p>
-          <select className="producto__talle-responsive" name="">
-            <option value="xs" disabled selected>Elegi tu talle</option>
-            <option value="xs">XS</option>
-            <option value="s">S</option>
-            <option value="m">M</option>
-            <option value="l">L</option>
-            <option value="xl">XL</option>
-          </select>
-          <button className="producto__boton-responsive" type="submit" name="button">Agregar a carrito</button>
         </div>
       </div>
 

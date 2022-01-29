@@ -1,0 +1,29 @@
+.footer {
+  padding-top: 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  padding-bottom: 1rem;
+}
+
+.paginas {
+  display: flex;
+  gap: 2rem;
+}
+
+.paginas__titulo-seccion {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.paginas__enlace {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.redes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}

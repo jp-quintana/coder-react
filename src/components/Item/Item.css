@@ -1,0 +1,63 @@
+.productos__item {
+  box-shadow: 0 0 1rem -0.3rem #E1E1E1;
+  transition: all .2s ease-in-out;
+}
+
+.productos__item:hover {
+  transform: scale(1.01);
+}
+
+.productos__enlace {
+  display: flex;
+  flex-direction: column;
+}
+
+.productos__enlace:hover {
+  color: #000000;
+}
+
+.productos__imagen-contenedor {
+  align-self: center;
+  position: relative;
+}
+
+.productos__imagen {
+  display: block;
+  object-fit: cover;
+}
+
+.productos__imagen:hover {
+  animation: slideshow 5s infinite;
+}
+
+@keyframes slideshow {
+  0%, 100% {
+    opacity: 100%;
+  }
+  30%, 70% {
+    opacity: 0;
+  }
+}
+
+.productos__imagen-bottom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.productos__info {
+  list-style: none;
+  line-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1rem; }
+  .productos__nombre {
+    font-size: 1.6rem;
+}

@@ -1,5 +1,7 @@
 import Item from '../Item/Item'
 
+import './ItemList.css'
+
 const ItemList = ({products}) => {
   return (
     <section id="productos" className="productos">

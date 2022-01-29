@@ -5,6 +5,8 @@ import { context } from '../../context/CartContext'
 
 import ItemCount from '../ItemCount/ItemCount'
 
+import './Item.css'
+
 const Item = ({ product }) => {
 
   const contexto = useContext(context);

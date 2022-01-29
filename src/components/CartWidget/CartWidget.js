@@ -3,6 +3,8 @@ import {NavLink} from 'react-router-dom'
 
 import { context } from '../../context/CartContext'
 
+import './CartWidget.css'
+
 const CartWidget = () => {
 
   const contexto = useContext(context);
