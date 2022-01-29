@@ -13,15 +13,18 @@ const Cart = () => {
   const [loading, setLoading] = useState(false)
   const [id, setId] = useState("");
   const [nombre, setNombre] = useState("nombre");
+  const [apellido, setApellido] = useState("apellido");
   const [email, setEmail] = useState("email@email.com");
   const [telefono, setTelefono] = useState(11111111);
 
   const guardarCompra = async () => {
+
     setLoading(true);
     const orden = {
       productos: carrito,
       usuario: {
         nombre: nombre,
+        apellido: apellido,
         email: email,
         telefono: telefono
       },
@@ -38,12 +41,16 @@ const Cart = () => {
     setId(id);
     setNombre('nombre');
     setEmail('email@email.com');
-    setTelefono(11111111);
+    setTelefono(1132074782);
     setTimeout(clear, 3000);
   }
 
   const handleChangeNombre = e => {
     setNombre(e.target.value);
+  }
+
+  const handleChangeApellido = e => {
+    setApellido(e.target.value);
   }
 
   const handleChangeEmail = e => {
@@ -84,11 +91,24 @@ const Cart = () => {
             </table>
 
             <p id="precio-total-carrito" className="carrito__total">Total: ${carritoPrecio}</p>
-
-            <input type="text" onChange={handleChangeNombre} placeholder="nombre" />
-            <input type="email" onChange={handleChangeEmail} placeholder="email@email.com" />
-            <input type="number" onChange={handleChangeTelefono} placeholder="11111111" />
-
+            <div className="">
+              <div className="">
+                <label>Nombre</label>
+                <input type="text" onChange={handleChangeNombre} placeholder="nombre" />
+              </div>
+              <div className="">
+                <label>Apellido</label>
+                <input type="text" onChange={handleChangeApellido} placeholder="apellido" />
+              </div>
+              <div className="">
+                <label>Email</label>
+                <input type="email" onChange={handleChangeEmail} placeholder="email@email.com" />
+              </div>
+              <div className="">
+                <label>Telefono</label>
+                <input type="number" onChange={handleChangeTelefono} placeholder="11111111" />
+              </div>
+            </div>
             <div className="carrito__boton-container">
               <button onClick={guardarCompra} id="boton-carrito" type="button" className="carrito__boton">Confirmá compra</button>
             </div>
