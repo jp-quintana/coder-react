@@ -65,15 +65,6 @@
   align-items: center;
 }
 
-.carrito__reducir {
-  transform: rotate(180deg);
-}
-
-.carrito__agregar:hover,
-.carrito__reducir:hover {
-  cursor: pointer;
-}
-
 .carrito__subtotal {
   flex-direction: row-reverse;
 }

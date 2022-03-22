@@ -1,3 +1,5 @@
+import './CartItemCount.css'
+
 const CartItemCount = ({ item, onAdd, onSubstract}) => {
 
   const handleAdd = () => {

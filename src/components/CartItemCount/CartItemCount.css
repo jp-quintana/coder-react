@@ -1,0 +1,15 @@
+.carrito__reducir {
+  transform: rotate(180deg);
+}
+
+.carrito__reducir,
+.carrito__agregar {
+  font-weight: 700;
+  border: none;
+  background-color: white;
+}
+
+.carrito__agregar:hover,
+.carrito__reducir:hover {
+  cursor: pointer;
+}
